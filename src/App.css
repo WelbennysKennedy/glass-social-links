@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.code-animation {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #64748b;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glass effect utilities */
+.glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Golden snake border animation - linha fina circulando */
+.snake-border {
+  position: relative;
+  overflow: visible;
+}
+
+.snake-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent,
+    #FFD700,
+    #FFA500,
+    #FFD700, 
+    transparent
+  );
+  border-radius: 2px;
+  z-index: 10;
+  animation: snake-move 6s linear infinite;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes snake-move {
+  /* Lado superior - esquerda para direita */
+  0% {
+    top: -2px;
+    left: -2px;
+    width: 60px;
+    height: 3px;
+    transform: rotate(0deg);
+  }
+  24% {
+    top: -2px;
+    left: calc(100% - 58px);
+    width: 60px;
+    height: 3px;
+    transform: rotate(0deg);
+  }
+
+  /* Canto superior direito */
+  25% {
+    top: -2px;
+    left: calc(100% - 2px);
+    width: 3px;
+    height: 60px;
+    transform: rotate(90deg);
+  }
+
+  /* Lado direito - cima para baixo */
+  49% {
+    top: calc(100% - 58px);
+    left: calc(100% - 2px);
+    width: 3px;
+    height: 60px;
+    transform: rotate(90deg);
+  }
+
+  /* Canto inferior direito */
+  50% {
+    top: calc(100% - 2px);
+    left: calc(100% - 58px);
+    width: 60px;
+    height: 3px;
+    transform: rotate(180deg);
+  }
+
+  /* Lado inferior - direita para esquerda */
+  74% {
+    top: calc(100% - 2px);
+    left: -2px;
+    width: 60px;
+    height: 3px;
+    transform: rotate(180deg);
+  }
+
+  /* Canto inferior esquerdo */
+  75% {
+    top: calc(100% - 58px);
+    left: -2px;
+    width: 3px;
+    height: 60px;
+    transform: rotate(270deg);
+  }
+
+  /* Lado esquerdo - baixo para cima */
+  99% {
+    top: -2px;
+    left: -2px;
+    width: 3px;
+    height: 60px;
+    transform: rotate(270deg);
+  }
+
+  /* Volta ao início */
+  100% {
+    top: -2px;
+    left: -2px;
+    width: 60px;
+    height: 3px;
+    transform: rotate(0deg);
+  }
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure responsive design */
+@media (max-width: 768px) {
+  .code-animation {
+    font-size: 12px;
+    left: 5%;
+    top: 15%;
+  }
+}
