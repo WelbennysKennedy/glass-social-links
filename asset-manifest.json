@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/glass-social-links/static/css/main.a8b90d7a.css",
+    "main.js": "/glass-social-links/static/js/main.54fed8ee.js",
+    "index.html": "/glass-social-links/index.html",
+    "main.a8b90d7a.css.map": "/glass-social-links/static/css/main.a8b90d7a.css.map",
+    "main.54fed8ee.js.map": "/glass-social-links/static/js/main.54fed8ee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8b90d7a.css",
+    "static/js/main.54fed8ee.js"
+  ]
+}
