@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/WelbennysKennedy/glass-social-links/static/css/main.a8b90d7a.css",
-    "main.js": "/WelbennysKennedy/glass-social-links/static/js/main.2be8dfbf.js",
-    "index.html": "/WelbennysKennedy/glass-social-links/index.html",
-    "main.a8b90d7a.css.map": "/WelbennysKennedy/glass-social-links/static/css/main.a8b90d7a.css.map",
-    "main.2be8dfbf.js.map": "/WelbennysKennedy/glass-social-links/static/js/main.2be8dfbf.js.map"
+    "main.css": "/glass-social-links/static/css/main.a8b90d7a.css",
+    "main.js": "/glass-social-links/static/js/main.3ec1dba8.js",
+    "index.html": "/glass-social-links/index.html",
+    "main.a8b90d7a.css.map": "/glass-social-links/static/css/main.a8b90d7a.css.map",
+    "main.3ec1dba8.js.map": "/glass-social-links/static/js/main.3ec1dba8.js.map"
   },
   "entrypoints": [
     "static/css/main.a8b90d7a.css",
-    "static/js/main.2be8dfbf.js"
+    "static/js/main.3ec1dba8.js"
   ]
 }

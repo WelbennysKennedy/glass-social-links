@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/WelbennysKennedy/glass-social-links/settings/pages",
+  "homepage": "https://welbennyskennedy.github.io/glass-social-links",
   "eslintConfig": {
     "extends": [
       "react-app",

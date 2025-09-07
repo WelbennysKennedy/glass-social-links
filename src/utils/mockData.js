@@ -2,7 +2,7 @@ export const mockLinks = [
   {
     id: '1',
     platform: 'website',
-    url: 'https://welbennyskennedy.github.io/Main-page/',
+    url: 'https://l1nq.com/Dcczj',
     customName: 'My Website'
   },
   {
