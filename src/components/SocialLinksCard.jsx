@@ -53,8 +53,10 @@ const SocialLinksCard = () => {
     }
   };
 
-  const handleLinkClick = (url) => {
-    window.open(url, '_blank');
+  const normalizeUrl = (url) => {
+    const cleanUrl = (url || '').trim();
+    if (!cleanUrl) return '#';
+    return /^https?:\/\//i.test(cleanUrl) ? cleanUrl : `https://${cleanUrl}`;
   };
 
   return (
@@ -93,11 +95,14 @@ const SocialLinksCard = () => {
               {links.map((link) => {
                 const IconComponent = platformIcons[link.platform] || ExternalLink;
                 const colorClass = platformColors[link.platform] || platformColors.custom;
+                const href = normalizeUrl(link.url);
 
                 return (
-                  <button
+                  <a
                     key={link.id}
-                    onClick={() => handleLinkClick(link.url)}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`w-full p-4 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:bg-white/20 ${colorClass} group`}
                   >
                     <div className="flex items-center space-x-3">
@@ -109,7 +114,7 @@ const SocialLinksCard = () => {
                       </div>
                       <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
-                  </button>
+                  </a>
                 );
               })}
             </div>
