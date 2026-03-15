@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/glass-social-links/static/css/main.a8b90d7a.css",
-    "main.js": "/glass-social-links/static/js/main.3ec1dba8.js",
+    "main.css": "/glass-social-links/static/css/main.ce8b3e48.css",
+    "main.js": "/glass-social-links/static/js/main.bd3fdc7c.js",
     "index.html": "/glass-social-links/index.html",
-    "main.a8b90d7a.css.map": "/glass-social-links/static/css/main.a8b90d7a.css.map",
-    "main.3ec1dba8.js.map": "/glass-social-links/static/js/main.3ec1dba8.js.map"
+    "main.ce8b3e48.css.map": "/glass-social-links/static/css/main.ce8b3e48.css.map",
+    "main.bd3fdc7c.js.map": "/glass-social-links/static/js/main.bd3fdc7c.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8b90d7a.css",
-    "static/js/main.3ec1dba8.js"
+    "static/css/main.ce8b3e48.css",
+    "static/js/main.bd3fdc7c.js"
   ]
 }
