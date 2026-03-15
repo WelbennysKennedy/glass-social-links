@@ -2,25 +2,25 @@ export const mockLinks = [
   {
     id: '1',
     platform: 'website',
-    url: 'https://l1nq.com/Dcczj',
-    customName: 'My Website'
+    url: 'https://digitallabirinto.com/',
+    customName: 'Digital Labirinto'
   },
   {
     id: '2',
     platform: 'linkedin',
-    url: 'https://url-shortener.me/4E3E',
+    url: 'https://www.linkedin.com',
     customName: 'Professional LinkedIn'
   },
   {
     id: '3',
     platform: 'github',
-    url: 'https://github.com/welbennys',
+    url: 'https://github.com/WelbennysKennedy/',
     customName: 'GitHub Projects'
   },
   {
     id: '4',
-    platform: 'instagram',
-    url: 'https://url-shortener.me/4E39',
-    customName: 'Personal Instagram'
+    platform: 'portfolio',
+    url: 'https://wekdev.com/',
+    customName: 'Portfolio'
   }
 ];

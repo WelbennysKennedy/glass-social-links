@@ -3,7 +3,6 @@ import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Badge } from './ui/badge';
 import { 
   Globe, 
   Linkedin, 
@@ -12,12 +11,8 @@ import {
   Instagram, 
   Twitter,
   Youtube,
-  Plus,
-  Edit3,
-  Trash2,
-  ExternalLink,
-  Copy,
-  Check
+  Briefcase,
+  ExternalLink
 } from 'lucide-react';
 import { mockLinks } from '../utils/mockData';
 
@@ -25,7 +20,6 @@ const SocialLinksCard = () => {
   const [links, setLinks] = useState(mockLinks);
   const [isEditing, setIsEditing] = useState(false);
   const [newLink, setNewLink] = useState({ platform: '', url: '', customName: '' });
-  const [copied, setCopied] = useState(false);
 
   const platformIcons = {
     website: Globe,
@@ -33,6 +27,7 @@ const SocialLinksCard = () => {
     facebook: Facebook,
     github: Github,
     instagram: Instagram,
+    portfolio: Briefcase,
     twitter: Twitter,
     youtube: Youtube,
     custom: ExternalLink
@@ -44,6 +39,7 @@ const SocialLinksCard = () => {
     facebook: 'bg-blue-700/20 text-blue-300 border-blue-600/30',
     github: 'bg-gray-600/20 text-gray-300 border-gray-500/30',
     instagram: 'bg-pink-500/20 text-pink-300 border-pink-400/30',
+    portfolio: 'bg-amber-500/20 text-amber-300 border-amber-400/30',
     twitter: 'bg-cyan-500/20 text-cyan-300 border-cyan-400/30',
     youtube: 'bg-red-500/20 text-red-300 border-red-400/30',
     custom: 'bg-purple-500/20 text-purple-300 border-purple-400/30'
@@ -55,18 +51,6 @@ const SocialLinksCard = () => {
       setLinks([...links, { ...newLink, id: linkId }]);
       setNewLink({ platform: '', url: '', customName: '' });
     }
-  };
-
-  const removeLink = (id) => {
-    setLinks(links.filter(link => link.id !== id));
-  };
-
-  const copyProfileUrl = () => {
-    const profileUrl = `${window.location.origin}/profile`;
-    navigator.clipboard.writeText(profileUrl).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
   };
 
   const handleLinkClick = (url) => {
@@ -82,17 +66,6 @@ const SocialLinksCard = () => {
           backgroundImage: `url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZyUyMGNvZGV8ZW58MHx8fHwxNzU3MjM3ODAzfDA&ixlib=rb-4.1.0&q=85')`
         }}
       />
-
-      {/* Animated code overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="code-animation">
-          <span className="text-green-400">const</span> <span className="text-blue-400">developer</span> = {'{'}<br />
-          &nbsp;&nbsp;<span className="text-yellow-400">name</span>: <span className="text-red-400">'Professional'</span>,<br />
-          &nbsp;&nbsp;<span className="text-yellow-400">skills</span>: [<span className="text-red-400">'React'</span>, <span className="text-red-400">'Node.js'</span>],<br />
-          &nbsp;&nbsp;<span className="text-yellow-400">social</span>: <span className="text-purple-400">links</span><br />
-          {'}'};
-        </div>
-      </div>
 
       <div className="relative z-10 flex items-center justify-center min-h-screen p-6">
         <div className="w-full max-w-md">
@@ -133,7 +106,6 @@ const SocialLinksCard = () => {
                         <p className="font-medium text-sm">
                           {link.customName || link.platform.charAt(0).toUpperCase() + link.platform.slice(1)}
                         </p>
-                        <p className="text-xs opacity-70 truncate">{link.url}</p>
                       </div>
                       <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
